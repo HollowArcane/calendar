@@ -1,0 +1,6 @@
+<!-- pagination container -->
+<div th:fragment="pagination" class="d-flex justify-content-center">
+    <ul class="pagination" th:insert="${body} ?: ~{::empty}"></ul>
+</div>
+
+<div th:fragment="empty"></div>

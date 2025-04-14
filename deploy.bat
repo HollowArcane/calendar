@@ -1,0 +1,2 @@
+cd cnf
+ant deploy

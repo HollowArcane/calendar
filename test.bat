@@ -1,0 +1,1 @@
+java -classpath lib\* -jar junit-platform-console-standalone-1.11.4.jar execute

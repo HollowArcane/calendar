@@ -1,0 +1,68 @@
+<div th:fragment="content">
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">New Event</h5>
+                <button type="button" class="btn-close" data-mdb-ripple-init data-mdb-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="form">
+    
+                    <div class="mb-3">
+                        <label for="title"> Event Title </label>
+                        <input class="form-control" type="text" name="title" id="title">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="idWorkspace"> Salle </label>
+                        <select class="form-select" name="idWorkspace" id="idWorkspace">
+                            <option th:each="option : ${workspaces}" th:text="${option.label}" th:value="${option.id}">  </option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="dateStart"> Event Start </label>
+                        <input target="calendar.start" class="form-control" type="datetime-local" name="dateStart" id="dateStart">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="dateEnd"> Event End </label>
+                        <input target="calendar.end" class="form-control" type="datetime-local" name="dateEnd" id="dateEnd">
+                    </div>
+                    <button class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+        </div>
+    </div>
+    <calendar id="calendar" onselect="modal.show()" selectable>
+        <header>
+            <div align="start">
+                <div>
+                    <button type="prev"></button>
+                    <button type="next"></button>
+                </div>
+                <button type="today"> Today </button>
+            </div>
+            <div align="center">
+                <title></title>
+            </div>
+    
+            <div align="end">
+                <button type="grid" track-by="day" track-over="month"> Month </button>
+                <button type="grid" track-by="day" track-over="week"> Week </button>
+                <button type="list"> Day </button>
+                <button> Est </button>
+            </div>
+        </header>
+        <events  max-events="4" id="calendarEvents">
+            <event th:each="row : ${data}">
+                <event th:background="${row.color}" th:text="${row.title}" th:start="${row.dateStart}" th:end="${row.dateEnd}">  </event>
+            </event>
+        </events>
+    </calendar>
+
+    <script defer src="/assets/src/js/calendar/index.js"></script>
+
+</div>

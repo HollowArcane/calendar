@@ -1,0 +1,28 @@
+<div th:fragment="sidenav(active)" class="pf__navbar shadow">
+    <div class="pf__navbar-brand"> <h1> <a href="/"> CALENDRIER </a></h1> </div>
+<!--     
+    <div class="pf__navbar-section">
+        <div class="pf__navbar-section">
+            <h3 class="pf__navbar-subtitle"> Menu </h3>
+            <ul class="pf__navbar-list">
+                <li>
+                    <a class="pf__navbar-item" href="/create"> <i class="fas fa-circle"></i> Nouvel Article </a>
+                </li>
+                <li>
+                    <a class="pf__navbar-item" href="/"> <i class="fas fa-circle"></i> Liste des Articles </a>
+                </li>
+            </ul>
+        </div>
+    </div> -->
+
+</div>
+
+<li th:fragment="link(active, href, label)" th:class="${active == href ? 'active': ''}">
+    <a
+        class="pf__navbar-item d-flex align-items-center"
+        th:href="${href}"
+    >
+        <i class="fas fa-circle" style="font-size: 0.3em;"></i>
+        <span th:text="${label}"></span>
+    </a>
+</li>

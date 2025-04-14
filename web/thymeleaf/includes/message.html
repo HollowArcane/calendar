@@ -1,0 +1,11 @@
+<div th:fragment="message">
+    <div class="alert alert-success" th:if="${session != null && session.message__success != null}" th:text="${session.message__success}"></div>
+    <div class="alert alert-info" th:if="${session != null && session.message__info != null}" th:text="${session.message__info}"></div>
+    <div class="alert alert-warning" th:if="${session != null && session.message__warning != null}" th:text="${session.message__warning}"></div>
+    <div class="alert alert-danger" th:if="${session != null && session.message__error != null}" th:text="${session.message__error}"></div>
+    
+    <div class="alert alert-success" th:if="${message__success != null}" th:text="${message__success}"></div>
+    <div class="alert alert-info" th:if="${message__info != null}" th:text="${message__info}"></div>
+    <div class="alert alert-warning" th:if="${message__warning != null}" th:text="${message__warning}"></div>
+    <div class="alert alert-danger" th:if="${message__error != null}" th:text="${message__error}"></div>
+</div>

@@ -1,0 +1,10 @@
+calendar {
+    display: blox;
+} 
+
+calendar > events,
+calendar > resources,
+calendar > header,
+calendar > footer {
+    display: none;
+}

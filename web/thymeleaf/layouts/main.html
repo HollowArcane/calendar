@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}"></title>
+
+    <!-- <link rel="stylesheet" type="text/css" href="/src/css/style.css" /> -->
+    <link rel="stylesheet" type="text/css" href="/assets/lib/fa/css/all.min.css" />
+    
+    <link rel="stylesheet" type="text/css" href="/assets/lib/mdb5/css/mdb.min.css" />
+    
+    <link rel="stylesheet" type="text/css" href="/assets/src/css/style.css">
+
+    <script defer type="text/javascript" src="/assets/lib/mdb5/js/mdb.umd.min.js"></script>
+    
+    <script defer type="text/javascript" src="/assets/lib/toolkit/js/dom.toolkit.js"></script>
+    <script defer type="text/javascript" src="/assets/lib/toolkit/js/FormHandler.js"></script>
+    <script defer type="text/javascript" src="/assets/lib/toolkit/js/CRUDPage.js"></script>
+    <script defer type="text/javascript" src="/assets/lib/toolkit/js/Pagination.js"></script>
+    
+    <script defer type="text/javascript" src="/assets/src/js/components.js"></script>
+    <script defer type="text/javascript" src="/assets/lib/swal/js/sweetalert2v11.js"></script>
+    
+    <link rel="stylesheet" type="text/css" href="/assets/lib/toolkit/css/calendar.toolkit.css" />
+    <script src="/assets/lib/toolkit/js/calendar.min.js"></script>
+    <script src="/assets/lib/toolkit/js/calendar.toolkit.js" defer></script>
+
+
+    <script defer type="text/javascript" src="/assets/src/js/watch.js"></script>
+    <script defer type="text/javascript" src="/assets/src/js/index.js"></script>
+</head>
+<body>
+    <!-- <div id="container"> -->
+        <!-- <aside th:insert="~{/components/sidenav :: sidenav(${active})}"></aside> -->
+        <main style="height: 100dvh; overflow-y: scroll;" th:insert="~{${page} :: content}"></main>
+    <!-- </div> -->
+</body>
+</html>
